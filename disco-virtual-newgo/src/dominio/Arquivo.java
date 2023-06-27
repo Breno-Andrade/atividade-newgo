@@ -34,6 +34,9 @@ public class Arquivo {
     }
 
     public void setTamanho(double tamanho) {
+        if (tamanho <= 0){
+            throw new IllegalArgumentException("O tamanho do arquivo não pode ser negativo");
+        }
         this.tamanho = tamanho;
     }
 
