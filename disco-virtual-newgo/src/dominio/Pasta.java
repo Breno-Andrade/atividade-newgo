@@ -1,6 +1,7 @@
 package dominio;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Pasta {
     private String nome;
@@ -50,14 +51,14 @@ public class Pasta {
 
     public void inserirSubpasta(Pasta subpasta){
         if (subpastas.contains(subpasta)){
-            throw new RuntimeException("Essa subpasta já existe!");
+            throw new IllegalArgumentException("Essa subpasta já existe!");
         }
         this.subpastas.add(subpasta);
     }
 
     public void excluirSubpasta(Pasta subpasta){
         if (!(subpastas.contains(subpasta))){
-            throw new RuntimeException("Essa subpasta não existe!");
+            throw new IllegalArgumentException("Essa subpasta não existe!");
         }
         this.subpastas.remove(subpasta);
     }
@@ -72,14 +73,14 @@ public class Pasta {
 
     public void inserirArquivo (Arquivo arquivo){
         if (arquivos.contains(arquivo)){
-            throw new RuntimeException("Esse arquivo já existe!");
+            throw new IllegalArgumentException("Esse arquivo já existe!");
         }
         this.arquivos.add(arquivo);
     }
 
     public void deletarArquivo (Arquivo arquivo){
         if (!(arquivos.contains(arquivo))){
-            throw new RuntimeException("Esse arquivo não existe!");
+            throw new IllegalArgumentException("Esse arquivo não existe!");
         }
         this.arquivos.remove(arquivo);
     }
