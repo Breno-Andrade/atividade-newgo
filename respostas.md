@@ -16,30 +16,30 @@ Breno Andrade da Silva.
 
 ### 2. Suponha que você tem uma classe final, da qual você não tem o código-fonte, e que você deseja adicioná-la a uma estrutura de polimorfismo, mas cuja interface pública é ligeiramente diferente da classe. Que padrão de projeto você poderia utilizar para aproveitar o código desta classe, mas fazendo com que ela atenda à interface da esperada na estrutura de polimorfismo?
 
-**Resposta:** (Não possuo conhecimento prático na aplicação de padrões de projeto).
+**Resposta:** (Não possuo experiência na aplicação de padrões de projeto).
 
 ---
 
 ### 3. Em que cenários você poderia usar um proxy? Dê um exemplo real.
 	
-**Resposta:** (Não possuo conhecimento prático na aplicação de padrões de projeto).
+**Resposta:** (Não possuo experiência na aplicação de padrões de projeto).
 
 ---
 
 ### 4. Você prefere utilizar domínios anêmicos ou ricos? Como avalia os prós e contras de cada?
 
-**Resposta:** (Não possuo experiencia no desenvolvimento de aplicações que utilizam domínios.) 
+**Resposta:** (Não possuo conhecimento sobre domínios anêmicos e ricos.) 
 
 ---
 
 #### 5. Dê um exemplo do bom uso do princípio OCP, da sigla SOLID.
 
-**Resposta:** O principio de aberto e fechado define que devemos desenvolver aplicações abertas para novos incrementos mas fechadas para modificações. (Não possuo conhecimento prático com desenvolvimento utilizando SOLID).
+**Resposta:** O principio de aberto e fechado define que devemos desenvolver aplicações abertas para novos incrementos mas fechadas para modificações. (Não possuo experiência com a aplicação dos princípios SOLID).
 
 ---
 
 ### 6. Qual é a diferença entre requisitos funcionais, não-funcionais e regras de negócio. Dê um exemplo de cada.
-**Resposta:** Requisitos funcionais dizem respeito a funcionalidades que o sistema deve apresentar. Exemplo: O sistema deve ser capaz de calcular desconto. Requisitos não-funcionais dizem respeito a características genéricas do sistema: O sistema deve ser rápido; O sistema deve ser estável. Por fim, as regras de negócio dizem respeito a características o negócio que impactam nas funcionalidades do sistema, por exemplo: Para comprar acima de 100 reais, o cliente deve receber 3% de desconto para pagamentos em até duas vezes. 
+**Resposta:** Requisitos funcionais dizem respeito a funcionalidades que o sistema deve apresentar, exemplo: O sistema deve permitir que o usuario calcule o frete dos itens no carrinho. Requisitos não-funcionais dizem respeito a características genéricas do sistema: O sistema deve ser rápido; O sistema deve ser estável. Por fim, as regras de negócio dizem respeito a características o negócio que impactam nas funcionalidades do sistema, por exemplo: Para comprar acima de 100 reais, o cliente deve receber 3% de desconto para pagamentos em até duas vezes. 
 
 ---
 
@@ -49,12 +49,12 @@ Breno Andrade da Silva.
 ---
 
 ### 8. Você está utilizando GitFlow e precisa fazer uma alteração na versão em desenvolvimento de um projeto. Quais etapas você teria que realizar?
-**Resposta:** Não possuo conhecimento prático na utilização de GitFlow. De forma conceitual, a primeira etapa é identificar qual o tipo de alteração devemos realizar, por exemplo: Correção; Incremento; Alteração em funcionalidade. Após isso identificar de qual branch devemos ramificar para realizar o procedimento, por fim, após concluído as alterações e testes, devemos unir novamente a branch ramificada com a de desenvolvimento.
+**Resposta:** De forma conceitual, a primeira etapa é identificar qual o tipo de alteração devemos realizar, por exemplo: Correção; Incremento; Alteração em funcionalidade. Após isso identificar de qual branch devemos ramificar para realizar o procedimento, por fim, após concluído as alterações e testes, devemos unir novamente a branch ramificada com a de desenvolvimento. (Não possuo experiência na utilização de GitFlow.)
 	
 ---
 
 ### 9. O que você deve ter feito para que uma funcionalidade que você pegou para implementar seja considerada como 'done'?
-**Resposta:** Implementado os requisitos solicitados e realizado os testes para identificar possíveis erros, se os testes não apontarem um comportamento estranho podemos informar ao superior que a funcionalidade está pronta para ser revisada. Se o superior, após revisão, aprovar a solução desenvolvida podemos marca-la como 'done'.
+**Resposta:** Implementado os requisitos solicitados e realizado os testes para identificar possíveis erros, se os testes não apontarem um comportamento estranho, podemos informar ao superior que a funcionalidade está pronta para ser revisada. Se o superior, após revisão, aprovar a solução desenvolvida podemos marca-la como 'done'.
 
 ---
 
@@ -72,7 +72,7 @@ Breno Andrade da Silva.
 ---
 
 ### 11. Você conhece e utiliza Docker nos seus projetos? Se sim, para que?
-**Resposta:** Não conheço e nunca utilizei o Docker.
+**Resposta:** (Não possuo conhecimento teórico ou prático sobre docker).
 
 ---
 
