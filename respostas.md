@@ -1,4 +1,4 @@
-# Estágio NewGo.
+# Estágio NewGo
 Breno Andrade da Silva.
 
 ---
@@ -75,3 +75,139 @@ Breno Andrade da Silva.
 **Resposta:** Não conheço e nunca utilizei o Docker.
 
 ---
+
+## Diagramas:
+
+---
+
+### Diagrama de classes.
+
+```
+
+@startuml
+
+class Pasta {
+  - nome: String
+  - subpastas: ArrayList<Pasta>
+  - arquivos: ArrayList<Arquivo>
+  --
+  + Pasta(nome: String)
+  + Pasta(nome: String, subpasta: Pasta)
+  + Pasta(nome: String, arquivo: Arquivo)
+  + Pasta(nome: String, subpasta: Pasta, arquivo: Arquivo)
+  + Pasta(nome: String, subpastas: ArrayList<Pasta>, arquivos: ArrayList<Arquivo>)
+  + getNome(): String
+  + alterarNome(nome: String): void
+  + getSubpastas(): ArrayList<Pasta>
+  + setSubpastas(subpastas: ArrayList<Pasta>): void
+  + inserirSubpasta(subpasta: Pasta): void
+  + excluirSubpasta(subpasta: Pasta): void
+  + getArquivos(): ArrayList<Arquivo>
+  + setArquivos(arquivos: ArrayList<Arquivo>): void
+  + inserirArquivo(arquivo: Arquivo): void
+  + deletarArquivo(arquivo: Arquivo): void
+  + toString(): String
+}
+
+class Arquivo {
+  - nome: String
+  - tipo: String
+  - tamanho: double
+  --
+  + Arquivo(nome: String, tipo: String, tamanho: double)
+  + getNome(): String
+  + setNome(nome: String): void
+  + getTipo(): String
+  + setTipo(tipo: String): void
+  + getTamanho(): double
+  + setTamanho(tamanho: double): void
+  + toString(): String
+}
+
+class CalculaTamanhoTotalDaPasta {
+  + calcularTamanhoDaPasta(pasta: Pasta): double
+}
+
+class VerificaSeExistemSubpastas {
+  + TemSubpastas(pasta: Pasta): boolean
+}
+
+Pasta -- Pasta: subpastas
+Pasta -- Arquivo: arquivos
+CalculaTamanhoTotalDaPasta --> Pasta
+VerificaSeExistemSubpastas --> Pasta
+
+@enduml
+
+```
+---
+### Diagrama de sequencia:
+```
+@startuml
+
+actor Usuário
+
+participant "Arquivo" as Arquivo
+participant "Pasta" as Pasta
+participant "CalculaTamanhoTotalDaPasta" as CalculaTamanhoTotalDaPasta
+
+
+Usuário -> Arquivo: Criar Arquivo 01
+activate Arquivo
+Arquivo --> Usuário: Arquivo 01 criado
+
+Usuário -> Arquivo: Criar Arquivo 02
+activate Arquivo
+Arquivo --> Usuário: Arquivo 02 criado
+
+Usuário -> Arquivo: Criar Arquivo 03
+activate Arquivo
+Arquivo --> Usuário: Arquivo 03 criado
+
+Usuário -> Pasta: Criar subpasta
+activate Pasta
+Pasta --> Usuário: Subpasta criada
+
+Usuário -> subpasta: Inserir Arquivo 01
+activate subpasta
+subpasta -> Arquivo: Inserir Arquivo 01
+activate Arquivo
+Arquivo --> subpasta: Arquivo 01 inserido
+
+Usuário -> subpasta: Inserir Arquivo 02
+subpasta -> Arquivo: Inserir Arquivo 02
+Arquivo --> subpasta: Arquivo 02 inserido
+
+Usuário -> Pasta: Criar pasta
+Pasta --> Usuário: Pasta criada
+
+Usuário -> pasta: Inserir subpasta
+activate pasta
+pasta -> subpasta: Inserir subpasta
+pasta --> Usuário: Subpasta inserida
+
+Usuário -> pasta: Inserir Arquivo 03
+pasta -> Arquivo: Inserir Arquivo 03
+Arquivo --> pasta: Arquivo 03 inserido
+
+Usuário -> CalculaTamanhoTotalDaPasta: Calcular tamanho da pasta
+activate CalculaTamanhoTotalDaPasta
+CalculaTamanhoTotalDaPasta -> pasta: Calcular tamanho da pasta
+pasta -> subpasta: Calcular tamanho da subpasta
+activate subpasta
+subpasta -> Arquivo: Obter tamanho dos arquivos
+activate Arquivo
+Arquivo --> subpasta: Tamanho dos arquivos obtido
+deactivate Arquivo
+subpasta --> pasta: Tamanho da subpasta calculado
+deactivate subpasta
+CalculaTamanhoTotalDaPasta --> Usuário: Tamanho total da pasta calculado
+
+Usuário -> Usuário: Exibir informações da pasta
+deactivate CalculaTamanhoTotalDaPasta
+Usuário --> Usuário: Informações exibidas
+
+
+@enduml
+
+```
